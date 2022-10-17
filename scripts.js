@@ -1,6 +1,12 @@
+let hours = new Date().getHours();
+let greeting;
+
 function greet() { 
-if (new Date().getHours() < 18) {
-  document.querySelector(".goodTime").innerHTML = "<strong>Good day!</strong><br><br> Current timestamp is:<br>" + Date();
-}
-else document.querySelector(".goodTime").innerHTML = "<strong>Good evening!</strong><br><br> Current timestamp is:<br>" + Date();
+  if (hours < 18) {
+    greeting = `Good day!`;
+  } else {
+    greeting = `Good evening!`;
+  }
+
+  document.querySelector(".goodTime").innerHTML = `<strong>${greeting}</strong><br><br> Current timestamp is:<br>` + Date();
 }
